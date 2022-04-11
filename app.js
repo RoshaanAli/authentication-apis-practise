@@ -21,9 +21,11 @@ const authRoutes = require("./routes/authentication");
 // middleware
 app.use(morgan("dev"));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(expressValidator());
 app.use("/auth", authRoutes);
 app.use("/", postRoutes);
+app.use("/uploads", express.static("uploads"));
 
 // route
 

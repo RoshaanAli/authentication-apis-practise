@@ -33,6 +33,9 @@ const registerModel = new mongoose.Schema({
     minlength: 3,
     maxlength: 30,
   },
+  dp: {
+    type: String,
+  },
 });
 
 module.exports = mongoose.model("Users", registerModel);
